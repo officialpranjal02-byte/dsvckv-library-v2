@@ -27,6 +27,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 20px;
         }
 
         .home-page h1 {
@@ -35,6 +36,13 @@
             letter-spacing: 2px;
             margin-bottom: 30px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
         }
 
         .tour-btn {
@@ -47,13 +55,82 @@
             border-radius: 4px;
             cursor: pointer;
             text-transform: uppercase;
-            transition: background 0.3s ease, transform 0.2s ease;
+            transition: background 0.3s, transform 0.2s;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .tour-btn:hover {
             background-color: #d61c1c;
             transform: scale(1.05);
+        }
+
+        .ack-home-btn {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 10px 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .ack-home-btn:hover {
+            background-color: white;
+            color: #333;
+        }
+
+        /* --- UPDATED: ACKNOWLEDGMENT PAGE --- */
+        .ack-page {
+            display: none;
+            min-height: 100vh;
+            width: 100vw;
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .ack-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 750px;
+            width: 100%;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .ack-page h2 {
+            font-size: 2.4rem;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #fff;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .ack-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 22px;
+            text-align: justify;
+            color: #f8f9fa;
+        }
+
+        .ack-signature {
+            margin-top: 35px;
+            text-align: right;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
         }
 
         /* --- PAGE 2: SUBJECT SELECTION --- */
@@ -72,6 +149,7 @@
             font-size: 2.5rem;
             color: #333;
             margin-bottom: 50px;
+            text-align: center;
         }
 
         .card-container {
@@ -80,6 +158,7 @@
             flex-wrap: wrap;
             justify-content: center;
             max-width: 1200px;
+            width: 100%;
         }
 
         .card {
@@ -93,19 +172,19 @@
             color: white;
             font-size: 1.4rem;
             font-weight: bold;
-            text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
         .anatomy-card { background: linear-gradient(135deg, #7f00ff, #e100ff); border-radius: 12px; }
         .physiology-card { background: linear-gradient(135deg, #ec53f4, #f39cf7); border-radius: 50px; }
-        .lpm-card { background-color: #ff6600; border: 2px solid #002060; border-radius: 0px; }
+        .lpm-card { background-color: #ff6600; border: 3px solid #002060; border-radius: 0px; }
 
         /* --- PAGE 3: BOOKSHELF PAGE --- */
         .bookshelf-page {
@@ -123,6 +202,7 @@
             color: #002060;
             margin-bottom: 30px;
             text-transform: uppercase;
+            text-align: center;
         }
 
         .shelf-container {
@@ -138,11 +218,11 @@
         .shelf-row {
             height: 130px;
             border-bottom: 12px solid #b58953;
-            position: relative;
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
             padding: 0 20px 5px 20px;
+            position: relative;
         }
 
         .shelf-row:last-child { border-bottom: none; }
@@ -163,14 +243,14 @@
             text-decoration: none;
             border-radius: 4px;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
             margin-bottom: 15px;
         }
 
         .resource-btn:hover { background-color: #002060; color: white; }
 
-        /* --- PAGE 4: MANUAL UNITS --- */
-        .unit-page {
+        /* --- PAGE 4: MANUAL UNITS, TANUVAS & LPM GRID --- */
+        .unit-page, .tanuvas-page, .lpm-tanuvas-page {
             display: none;
             min-height: 100vh;
             width: 100vw;
@@ -180,42 +260,41 @@
             padding: 40px 20px;
         }
 
-        .unit-page h2 {
+        .unit-page h2, .tanuvas-page h2, .lpm-tanuvas-page h2 {
             font-size: 2.2rem;
             color: #7f00ff;
             margin-bottom: 40px;
+            text-align: center;
         }
+
+        .lpm-tanuvas-page h2 { color: #ff6600; }
 
         .grid-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            max-width: 600px;
+            max-width: 650px;
             width: 100%;
         }
 
-        .unit-btn {
+        .unit-btn, .tanuvas-btn, .lpm-btn {
             background: linear-gradient(135deg, #7f00ff, #e100ff);
             color: white;
             padding: 20px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             text-decoration: none;
-            border: none;
             border-radius: 8px;
             text-align: center;
-            cursor: pointer;
             transition: transform 0.2s;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .unit-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-        }
+        .lpm-btn { background: linear-gradient(135deg, #ff6600, #ff9933); }
+        .unit-btn:hover, .tanuvas-btn:hover, .lpm-btn:hover { transform: scale(1.05); }
 
-        /* --- PAGE 5: DYNAMIC BOOKS --- */
-        .book-page {
+        /* --- PAGE 5: BOOKS, PAPERS & NOTES SELECTION PAGE --- */
+        .book-page, .pyq-page, .notes-selection-page {
             display: none;
             min-height: 100vh;
             width: 100vw;
@@ -225,13 +304,11 @@
             padding: 40px 20px;
         }
 
-        .book-page h2 {
-            font-size: 2.2rem;
-            color: #b31010;
-            margin-bottom: 40px;
-        }
+        .book-page h2 { color: #b31010; font-size: 2.2rem; margin-bottom: 40px; text-align: center; }
+        .pyq-page h2 { color: #002060; font-size: 2.2rem; margin-bottom: 40px; text-align: center; }
+        .notes-selection-page h2 { color: #ec53f4; font-size: 2.2rem; margin-bottom: 40px; text-align: center; }
 
-        .book-list-container {
+        .book-list-container, .pyq-list-container, .notes-list-container {
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -239,7 +316,7 @@
             width: 100%;
         }
 
-        .book-btn {
+        .book-btn, .pyq-btn {
             background: linear-gradient(135deg, #b31010, #ff4d4d);
             color: white;
             padding: 20px;
@@ -250,42 +327,13 @@
             border-radius: 8px;
             text-align: center;
             cursor: pointer;
-            transition: transform 0.2s;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .book-btn:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-        }
+        .pyq-btn { background: linear-gradient(135deg, #002060, #2575fc); }
 
-        /* --- PAGE 6: PYQ SELECTION --- */
-        .pyq-page {
-            display: none;
-            min-height: 100vh;
-            width: 100vw;
-            background-color: #eaeaea;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-        }
-
-        .pyq-page h2 {
-            font-size: 2.2rem;
-            color: #002060;
-            margin-bottom: 40px;
-        }
-
-        .pyq-list-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .pyq-btn {
-            background: linear-gradient(135deg, #002060, #2575fc);
+        .notes-option-btn {
+            background: linear-gradient(135deg, #ec53f4, #9c27b0);
             color: white;
             padding: 20px;
             font-size: 1.2rem;
@@ -295,13 +343,7 @@
             border-radius: 8px;
             text-align: center;
             cursor: pointer;
-            transition: transform 0.2s;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .pyq-btn:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
         }
 
         .back-btn {
@@ -313,6 +355,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 1rem;
         }
 
         @media (max-width: 768px) {
@@ -324,11 +367,30 @@
 </head>
 <body>
 
+    <!-- PAGE 1: HOME -->
     <div class="home-page" id="homePage">
         <h1>DSVCKV LIBRARY</h1>
-        <button class="tour-btn" onclick="navigate('homePage', 'subjectsPage')">Take a Tour</button>
+        <div class="btn-group">
+            <button class="tour-btn" onclick="navigate('homePage', 'subjectsPage')">Take a Tour</button>
+            <button class="ack-home-btn" onclick="navigate('homePage', 'ackPage')">Acknowledgments 📜</button>
+        </div>
     </div>
 
+    <!-- REPLACED WITH YOUR TEXT: ACKNOWLEDGMENTS -->
+    <div class="ack-page" id="ackPage">
+        <div class="ack-container">
+            <h2>Acknowledgment</h2>
+            <div class="ack-content">
+                <p>I would like to express my sincere gratitude to everyone who has supported me throughout the completion of this work.</p>
+                <p>First and foremost, I must acknowledge the immense inspiration I have drawn from <strong>Laxmi Jaiswal</strong>. Her guidance, unwavering encouragement, and insights have been a constant source of motivation, shaping my perspective and driving me to pursue excellence.</p>
+                <p>I am also deeply grateful to my professors, peers, and family for providing the resources, environment, and moral support necessary to bring this endeavor to fruition. This work stands as a reflection of the collective encouragement I have received.</p>
+                <div class="ack-signature">Pranjal Diwan</div>
+            </div>
+        </div>
+        <button class="back-btn" onclick="navigate('ackPage', 'homePage')">← Back to Home</button>
+    </div>
+
+    <!-- PAGE 2: SUBJECTS -->
     <div class="subjects-page" id="subjectsPage">
         <h2>Select Your Subject</h2>
         <div class="card-container">
@@ -339,6 +401,7 @@
         <button class="back-btn" onclick="navigate('subjectsPage', 'homePage')">← Back to Home</button>
     </div>
 
+    <!-- PAGE 3: BOOKSHELF -->
     <div class="bookshelf-page" id="bookshelfPage">
         <h2 id="currentSubjectTitle">Subject Name</h2>
         <div class="shelf-container">
@@ -348,10 +411,7 @@
             </div>
             <div class="shelf-row row-notes">
                 <div></div>
-                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                    <a href="#" id="notesLink" target="_blank" class="resource-btn">KVASU Notes 📝 →</a>
-                    <a href="#" id="kurreNotesLink" target="_blank" class="resource-btn" style="display: none;">Kurre Notes 📝 →</a>
-                </div>
+                <button class="resource-btn" onclick="handleNotesClick()">Notes →</button>
             </div>
             <div class="shelf-row row-manuals">
                 <div></div>
@@ -365,31 +425,78 @@
         <button class="back-btn" onclick="navigate('bookshelfPage', 'subjectsPage')">← Back to Subjects</button>
     </div>
 
+    <!-- PAGE 4: PHYSIOLOGY NOTES SELECTION -->
+    <div class="notes-selection-page" id="notesSelectionPage">
+        <h2>Select Physiology Notes</h2>
+        <div class="notes-list-container">
+            <a href="https://drive.google.com/file/d/1JZzRsCM3QiGRoWro8-lPjEzITXPoPnZr/view?usp=drivesdk" target="_blank" class="notes-option-btn">KVASU Notes 📝</a>
+            <a href="https://drive.google.com/file/d/1b0pky4bGWBH00aouV_a6JJ1B20Scq6Fl/view?usp=drivesdk" target="_blank" class="notes-option-btn">Kurre Notes 📝</a>
+            <button class="notes-option-btn" onclick="navigate('notesSelectionPage', 'tanuvasPage')">TANUVAS Notes (Topic Wise) 📑</button>
+        </div>
+        <button class="back-btn" onclick="navigate('notesSelectionPage', 'bookshelfPage')">← Back to Shelf</button>
+    </div>
+
+    <!-- PAGE 5: TANUVAS PHYSIOLOGY TOPIC WISE NOTES -->
+    <div class="tanuvas-page" id="tanuvasPage">
+        <h2>TANUVAS Veterinary Physiology Notes</h2>
+        <div class="grid-container">
+            <a href="https://drive.google.com/file/d/1OJ0tddJZkxHs01R73zrXisyI1QLR212a/view?usp=drivesdk" target="_blank" class="tanuvas-btn">1. Blood Physiology 🩸</a>
+            <a href="https://drive.google.com/file/d/1nIj54mmkrL1kXk9zhqOvtRzdrA0yxsGy/view?usp=drivesdk" target="_blank" class="tanuvas-btn">2. Cardiovascular System ❤️</a>
+            <a href="https://drive.google.com/file/d/1-7z5i6C3KpZevHRW4j7avPCVIh5ozczE/view?usp=drivesdk" target="_blank" class="tanuvas-btn">3. Respiration Physiology 🫁</a>
+            <a href="https://drive.google.com/file/d/1Y-FOtmgXykcKPlwUx66EENS2WVdENMw0/view?usp=drivesdk" target="_blank" class="tanuvas-btn">4. Digestion Physiology 🍕</a>
+            <a href="https://drive.google.com/file/d/1FMf2MmUR7gtWv8MZy39vUf0eAW5NJGIo/view?usp=drivesdk" target="_blank" class="tanuvas-btn">5. Endocrinology 🧠</a>
+            <a href="https://drive.google.com/file/d/1yaqKXjC_c49q7OqRHvGxn9ZYahq066WY/view?usp=drivesdk" target="_blank" class="tanuvas-btn">6. Excretion System 💧</a>
+            <a href="https://drive.google.com/file/d/1EbYspjkMCSKD12FF00m6n1PtysfUEr1V/view?usp=drivesdk" target="_blank" class="tanuvas-btn">7. Myology 💪</a>
+            <a href="https://drive.google.com/file/d/1_NIpXL6sFZ0SzVQilgRBsamal4Cq_TOR/view?usp=drivesdk" target="_blank" class="tanuvas-btn">8. Reproductive Physiology 🐾</a>
+            <a href="https://drive.google.com/file/d/1KicorfW59klQnas-qm4oo6HaSkOWPLrw/view?usp=drivesdk" target="_blank" class="tanuvas-btn">9. Nervous Physiology ⚡</a>
+        </div>
+        <button class="back-btn" onclick="navigate('tanuvasPage', 'notesSelectionPage')">← Back to Notes</button>
+    </div>
+
+    <!-- TANUVAS LPM NOTES GRID -->
+    <div class="lpm-tanuvas-page" id="lpmTanuvasPage">
+        <h2>TANUVAS LPM Notes</h2>
+        <div class="grid-container">
+            <a href="https://drive.google.com/file/d/1einAaYFl19uZuqp1q2Y2hfmxmr6GS3v0/view?usp=drive_link" target="_blank" class="lpm-btn">Unit 1 🏡</a>
+            <a href="https://drive.google.com/file/d/1lFe1AY_suDqG3fcOTYts1vvgRaZ5WZmv/view?usp=drive_link" target="_blank" class="lpm-btn">Unit 2 🐄</a>
+            <a href="https://drive.google.com/file/d/1Veui0-MMxWFKw2GLC0gm05t0B2LgyLoj/view?usp=drive_link" target="_blank" class="lpm-btn">Unit 3 🐖</a>
+            <a href="https://drive.google.com/file/d/1EEVniuNAIRmc6UQgb5PsCb6heHXfd9ww/view?usp=drive_link" target="_blank" class="lpm-btn">Unit 4 🐑</a>
+            <a href="https://drive.google.com/file/d/1yJuAtS1pajgX27P71jM9x7yZLxMgGHAS/view?usp=drive_link" target="_blank" class="lpm-btn">Unit 5 🐎</a>
+            <a href="https://drive.google.com/file/d/1iNTIvwN0m2vyzowsuAKCC-w753sS2Vqt/view?usp=drive_link" target="_blank" class="lpm-btn">Unit 6 & 7 🐆</a>
+            <a href="https://drive.google.com/file/d/1O8UOqkp-ht7EqGPvEzVGneJH_r0AiKl_/view?usp=drive_link" target="_blank" class="lpm-btn">Unit 8 📈</a>
+            <a href="https://drive.google.com/file/d/1gm_tDquAbQ6hbhH9hFW-u6IVRTGaCxOA/view?usp=drive_link" target="_blank" class="lpm-btn">Unit 9 🛡️</a>
+        </div>
+        <button class="back-btn" onclick="navigate('lpmTanuvasPage', 'bookshelfPage')">← Back to Shelf</button>
+    </div>
+
+    <!-- PAGE 6: ANATOMY MANUAL UNITS -->
     <div class="unit-page" id="unitPage">
         <h2>Veterinary Anatomy Manuals</h2>
         <div class="grid-container">
-            <a href="#" id="unit1" target="_blank" class="unit-btn">Unit 1</a>
-            <a href="#" id="unit2" target="_blank" class="unit-btn">Unit 2 (Forelimb)</a>
-            <a href="#" id="unit3" target="_blank" class="unit-btn">Unit 3</a>
-            <a href="#" id="unit4" target="_blank" class="unit-btn">Unit 4</a>
-            <a href="#" id="unit5" target="_blank" class="unit-btn">Unit 5</a>
-            <a href="#" id="unit6" target="_blank" class="unit-btn">Unit 6</a>
-            <a href="#" id="unit7" target="_blank" class="unit-btn">Unit 7</a>
-            <a href="#" id="unit8" target="_blank" class="unit-btn">Unit 8</a>
+            <a href="https://drive.google.com/file/d/1NsccZk_EZkEX1OjWVXXTv6cyXMW1IC_n/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 1</a>
+            <a href="https://drive.google.com/file/d/1aSOmRjLGJ3kOlRJBK8OFmMBpqC0QC3t8/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 2 (Forelimb)</a>
+            <a href="https://drive.google.com/file/d/1sx_p-ZRctXq81XS57jP41q7hiDB94YAS/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 3</a>
+            <a href="https://drive.google.com/file/d/1vKnXdkMsKvvQwzHa4QhhRi1DwobkGnTs/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 4</a>
+            <a href="https://drive.google.com/file/d/10Xcc2sHKatvNlWN4dnb54_Takf6mRTDA/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 5</a>
+            <a href="https://drive.google.com/file/d/18l3iAMFcdfE9jNWNKR0lLUJziMegxvEN/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 6</a>
+            <a href="https://drive.google.com/file/d/1lK7XltxKYNYMvePQiRaIUDt-y5ZhoHe7/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 7</a>
+            <a href="https://drive.google.com/file/d/1gt9hK5xIQDo3ycz4JSVxoD_SxdZ0AfQJ/view?usp=drivesdk" target="_blank" class="unit-btn">Unit 8</a>
         </div>
         <button class="back-btn" onclick="navigate('unitPage', 'bookshelfPage')">← Back to Shelf</button>
     </div>
 
+    <!-- PAGE 7: DYNAMIC BOOKS -->
     <div class="book-page" id="bookPage">
         <h2 id="bookPageTitle">Veterinary Books</h2>
         <div class="book-list-container" id="bookListContainer"></div>
         <button class="back-btn" onclick="navigate('bookPage', 'bookshelfPage')">← Back to Shelf</button>
     </div>
 
+    <!-- PAGE 8: PYQs DYNAMIC VIEWS -->
     <div class="pyq-page" id="pyqPage">
         <h2 id="pyqPageTitle">Previous Year Papers</h2>
         <div class="pyq-list-container" id="pyqListContainer"></div>
-        <button class="back-btn" onclick="handlePyqBackClick()">← Back to Shelf</button>
+        <button class="back-btn" onclick="handlePyqBackClick()">← Back</button>
     </div>
 
     <script>
@@ -406,28 +513,27 @@
             }
         }
 
-        var driveLinks = {
-            'Veterinary Anatomy': { notes: '#', kurre: '#' },
-            'Veterinary Physiology': { 
-                notes: 'https://drive.google.com/file/d/1JZzRsCM3QiGRoWro8-lPjEzITXPoPnZr/view?usp=drivesdk', 
-                kurre: 'https://drive.google.com/file/d/1b0pky4bGWBH00aouV_a6JJ1B20Scq6Fl/view?usp=drivesdk' 
-            },
-            'Veterinary LPM': { notes: '#', kurre: '#' }
-        };
-
         var pyqLinks = {
             'Veterinary Anatomy': { 
-                external1: '#', external2: '#', 
-                internal1: '#', internal2: '#', internal3: '#' 
+                external1: '#', 
+                external2: '#', 
+                internal1: '#', 
+                internal2: 'https://drive.google.com/file/d/144a7bYtT1-K8eu8B5IaVpeDutGqDWFUx/view?usp=drivesdk', 
+                internal3: 'https://drive.google.com/file/d/1XiwvqruJ8YLdmW0gb-L93JHbtrbT73XS/view?usp=drivesdk'  
             },
             'Veterinary Physiology': { 
-                external1: '#', external2: '#', 
-                internal1: '#', internal2: '#', internal3: '#' 
+                external1: '#', 
+                external2: '#', 
+                internal1: '#', 
+                internal2: 'https://drive.google.com/file/d/14sepWdB9-lIv2SZ0ncELEO9wA9kTb3qv/view?usp=drivesdk', 
+                internal3: 'https://drive.google.com/file/d/1zKcfHSxNn3mCHkxn_iXUvkT0utIn78vm/view?usp=drivesdk'  
             },
             'Veterinary LPM': { 
-                external1: '#', external2: '#', 
-                internal1: '#', internal2: '#', 
-                internal3: 'https://drive.google.com/file/d/1-yqhl0-4HWMhovT9mSbY5V_gmM_MYzXE/view?usp=drivesdk' 
+                external1: '#', 
+                external2: '#', 
+                internal1: 'https://drive.google.com/file/d/114gXkFL1SD8uTwXgKMNEvIy6eI-n-W4A/view?usp=drivesdk', 
+                internal2: 'https://drive.google.com/file/d/1i9TzPvrN9rtiRDoz04hFcUhukNUQW4z4/view?usp=drivesdk', 
+                internal3: 'https://drive.google.com/file/d/1-yqhl0-4HWMhovT9mSbY5V_gmM_MYzXE/view?usp=drivesdk'  
             }
         };
 
@@ -445,36 +551,20 @@
             { text: "Duke's Physiology of Domestic Animals 🐎", url: 'https://drive.google.com/file/d/15pYi4cLAgHAl1C1rhQkNiuiMaQYLuhwB/view?usp=drivesdk' }
         ];
 
-        var anatomyManuals = {
-            unit1: 'https://drive.google.com/file/d/1NsccZk_EZkEX1OjWVXXTv6cyXMW1IC_n/view?usp=drivesdk',
-            unit2: 'https://drive.google.com/file/d/1aSOmRjLGJ3kOlRJBK8OFmMBpqC0QC3t8/view?usp=drivesdk',
-            unit3: 'https://drive.google.com/file/d/1sx_p-ZRctXq81XS57jP41q7hiDB94YAS/view?usp=drivesdk',
-            unit4: 'https://drive.google.com/file/d/1vKnXdkMsKvvQwzHa4QhhRi1DwobkGnTs/view?usp=drivesdk',
-            unit5: 'https://drive.google.com/file/d/10Xcc2sHKatvNlWN4dnb54_Takf6mRTDA/view?usp=drivesdk',
-            unit6: 'https://drive.google.com/file/d/18l3iAMFcdfE9jNWNKR0lLUJziMegxvEN/view?usp=drivesdk',
-            unit7: 'https://drive.google.com/file/d/1lK7XltxKYNYMvePQiRaIUDt-y5ZhoHe7/view?usp=drivesdk',
-            unit8: 'https://drive.google.com/file/d/1gt9hK5xIQDo3ycz4JSVxoD_SxdZ0AfQJ/view?usp=drivesdk'
-        };
-
         function openShelf(subjectName) {
             selectedSubject = subjectName;
             document.getElementById('currentSubjectTitle').innerText = subjectName;
-            
-            var notesBtn = document.getElementById('notesLink');
-            notesBtn.href = driveLinks[subjectName].notes || '#';
-            
-            var kurreBtn = document.getElementById('kurreNotesLink');
-            
-            if (subjectName === 'Veterinary Physiology') {
-                notesBtn.innerText = "KVASU Notes 📝 →";
-                kurreBtn.href = driveLinks[subjectName].kurre;
-                kurreBtn.style.display = 'inline-block';
-            } else {
-                notesBtn.innerText = "Notes →";
-                kurreBtn.style.display = 'none';
-            }
-            
             navigate('subjectsPage', 'bookshelfPage');
+        }
+
+        function handleNotesClick() {
+            if (selectedSubject === 'Veterinary Physiology') {
+                navigate('bookshelfPage', 'notesSelectionPage');
+            } else if (selectedSubject === 'Veterinary LPM') {
+                navigate('bookshelfPage', 'lpmTanuvasPage');
+            } else {
+                window.open('#', '_blank');
+            }
         }
 
         function handleBookClick() {
@@ -507,12 +597,9 @@
 
         function handleManualClick() {
             if (selectedSubject === 'Veterinary Anatomy') {
-                for (var i = 1; i <= 8; i++) {
-                    document.getElementById('unit' + i).href = anatomyManuals['unit' + i];
-                }
                 navigate('bookshelfPage', 'unitPage');
             } else {
-                window.open(driveLinks[selectedSubject].manual || '#', '_blank');
+                window.open('#', '_blank');
             }
         }
 
@@ -549,4 +636,50 @@
 
             var internals = [
                 { text: 'First Internal Exam ✏️', url: pyqLinks[selectedSubject].internal1 },
-               
+                { text: 'Second Internal Exam ✏️', url: pyqLinks[selectedSubject].internal2 },
+                { text: 'Third Internal Exam ✏️', url: pyqLinks[selectedSubject].internal3 }
+            ];
+
+            internals.forEach(function(item) {
+                var btn = document.createElement('a');
+                btn.className = 'pyq-btn';
+                btn.innerText = item.text;
+                btn.href = item.url || '#';
+                btn.target = '_blank';
+                container.appendChild(btn);
+            });
+        }
+
+        function showExternalMenu() {
+            currentPyqViewState = 'external';
+            document.getElementById('pyqPageTitle').innerText = selectedSubject + ' External Exams';
+            var container = document.getElementById('pyqListContainer');
+            container.innerHTML = '';
+
+            var externals = [
+                { text: 'Paper 1 📜', url: pyqLinks[selectedSubject].external1 },
+                { text: 'Paper 2 📜', url: pyqLinks[selectedSubject].external2 }
+            ];
+
+            externals.forEach(function(item) {
+                var btn = document.createElement('a');
+                btn.className = 'pyq-btn';
+                btn.innerText = item.text;
+                btn.href = item.url || '#';
+                btn.target = '_blank';
+                container.appendChild(btn);
+            });
+        }
+
+        function handlePyqBackClick() {
+            if (currentPyqViewState === 'internal' || currentPyqViewState === 'external') {
+                currentPyqViewState = 'main';
+                document.getElementById('pyqPageTitle').innerText = selectedSubject + ' PYQs';
+                showPyqMainMenu();
+            } else {
+                navigate('pyqPage', 'bookshelfPage');
+            }
+        }
+    </script>
+</body>
+</html>
